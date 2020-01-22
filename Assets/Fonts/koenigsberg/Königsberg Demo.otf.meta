@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8501dc61fea18bb4d8a333f6b140a0f4
+timeCreated: 1505477004
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: K?nigsberg
+  fontNames:
+  - K?nigsberg
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

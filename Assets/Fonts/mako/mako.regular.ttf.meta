@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0ace2929b07594543b3ef84f0d53b343
+timeCreated: 1504386905
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mako
+  fontNames:
+  - Mako
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
