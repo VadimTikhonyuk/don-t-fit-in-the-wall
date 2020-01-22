@@ -1,3 +1,9 @@
 .vs/
 Library/
 Temp/
+Assembly-CSharp.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-Editor-firstpass.csproj
+don-t-fit-in-the-wall.sln
+obj/
