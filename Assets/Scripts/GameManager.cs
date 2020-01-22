@@ -33,12 +33,13 @@ public static class CoinManager
 public class GameManager : MonoBehaviour 
 {
 	public static GameManager Instance;
-	public GameObject WelcomeTab;
-	public GameObject GameEndTab;
-	public GameObject MobileControl;
 
-	public int score;
-	public int highscore
+	[SerializeField] private GameObject WelcomeTab;
+    [SerializeField] private GameObject GameEndTab;
+    [SerializeField] private GameObject MobileControl;
+
+	private int score;
+	private int highscore
 	{
 		get {
 			return SPlayerPrefs.GetInt ("Highscore");
@@ -48,101 +49,101 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public Text Score;
-	public Text FinalScore;
-	public Text SharedScore;
-	public Text Highscore;
-	public Text Coins;
-	public Text CoinsInPatterView;
-	public Animator CoinAnimator;
+	[SerializeField] private Text Score;
+	[SerializeField] private Text FinalScore;
+	[SerializeField] private Text SharedScore;
+	[SerializeField] private Text Highscore;
+	[SerializeField] private Text Coins;
+	[SerializeField] private Text CoinsInPatterView;
+    [SerializeField] private Animator CoinAnimator;
 
-	public List<GameObject> Details;
+    [SerializeField] private List<GameObject> Details;
 
-	public Image LoadingFade;
-	public Image LoadingFadeHelper;
-	public AnimationCurve FadeAnimationCurve;
-	public float FadeAnimationSpeed = 1;
+    [SerializeField] private Image LoadingFade;
+    [SerializeField] private Image LoadingFadeHelper;
+    [SerializeField] private AnimationCurve FadeAnimationCurve;
+    [SerializeField] private float FadeAnimationSpeed = 1;
 
 	[Header("GamePlay")]
 
-	public Transform WallSpawnPos;
-	public Wall MyWall;
-	public PlayerControl Player;
+    [SerializeField] private Transform WallSpawnPos;
+    [SerializeField] private Wall MyWall;
+    [SerializeField] private PlayerControl Player;
 
 	private bool lockSpawn = false;
-	public float WallSpeed = 4;
+    [SerializeField] private float WallSpeed = 4;
 
-	public Image SkipBlink;
-	public AnimationCurve SkipBlinkScaleCurve;
-	public AnimationCurve SkipBlinkAlphaCurve;
-	public float SkipBlinkAnimationSpeed;
+    [SerializeField] private Image SkipBlink;
+    [SerializeField] private AnimationCurve SkipBlinkScaleCurve;
+    [SerializeField] private AnimationCurve SkipBlinkAlphaCurve;
+    [SerializeField] private float SkipBlinkAnimationSpeed;
 
-	public int CoinsPerCollect = 1;
+    [SerializeField] private int CoinsPerCollect = 1;
 
 	[Header("Tutorial")]
-	public CanvasGroup TutorialGroup;
-	public AnimationCurve TutorialAlphaCurve;
+    [SerializeField] private CanvasGroup TutorialGroup;
+    [SerializeField] private AnimationCurve TutorialAlphaCurve;
 
-	public float TutorialWallSpeed = 1.5f;
-	public float TutorialLenght = 3;
-	private bool tutorialSkip = false;
+    [SerializeField] private float TutorialWallSpeed = 1.5f;
+    [SerializeField] private float TutorialLenght = 3;
+    [SerializeField] private bool tutorialSkip = false;
 
 	[Header("Patterns UI")]
-	public CanvasGroup DefaultEndGameView;
-	public CanvasGroup PatternsView;
+    [SerializeField] private CanvasGroup DefaultEndGameView;
+    [SerializeField] private CanvasGroup PatternsView;
 
-	public AnimationCurve SwitchAnimationCurve;
-	public float SwitchAnimationSpeed = 1;
+    [SerializeField] private AnimationCurve SwitchAnimationCurve;
+    [SerializeField] private float SwitchAnimationSpeed = 1;
 
 
 	[Header("AdsSettings")]
-	public int InterstitialRate = 10;
-	public int RewardAdsRate = 5;
-	public GameObject WatchAdsButton;
-	public int RewardForVideoAds = 20;
-	public Text RewardPerVideoAdsText;
-	public TappxManagerUnity CrossPromotionManager;
-	public int CrossPromotionRate = 7;
+    [SerializeField] private int InterstitialRate = 10;
+    [SerializeField] private int RewardAdsRate = 5;
+    [SerializeField] private GameObject WatchAdsButton;
+    [SerializeField] private int RewardForVideoAds = 20;
+    [SerializeField] private Text RewardPerVideoAdsText;
+    [SerializeField] private TappxManagerUnity CrossPromotionManager;
+    [SerializeField] private int CrossPromotionRate = 7;
 
 	[Header("Themes")]
-	public List<Color> AllColors;
-	public int changeColorPerScore = 5;
-	public Image Background;
-	public Image Foreground;
-	public float ChangeColorSpeed;
-	public AnimationCurve ChangeColorCurve;
+    [SerializeField] private List<Color> AllColors;
+    [SerializeField] private int changeColorPerScore = 5;
+    [SerializeField] private Image Background;
+    [SerializeField] private Image Foreground;
+    [SerializeField] private float ChangeColorSpeed;
+    [SerializeField] private AnimationCurve ChangeColorCurve;
 
 	[Header("Audio")]
-	public Image AudioFXButton;
-	public Sprite AudioFXOnSprite;
-	public Sprite AudioFXOffSprite;
+	[SerializeField] private Image AudioFXButton;
+	[SerializeField] private Sprite AudioFXOnSprite;
+	[SerializeField] private Sprite AudioFXOffSprite;
 
-	public AudioSource FX;
-	public AudioSource Music;
+	[SerializeField] private AudioSource FX;
+	[SerializeField] private AudioSource Music;
 
-	public AudioClip OnGameBegin;
-	public AudioClip OnMoveClip;
-	public AudioClip OnCollect;
-	public AudioClip OnSkip;
-	public AudioClip OnHit;
-	public AudioClip OnUnlockPatternClip;
-	public List<AudioClip> WallWhooshes;
+	[SerializeField] private AudioClip OnGameBegin;
+	[SerializeField] private AudioClip OnMoveClip;
+	[SerializeField] private AudioClip OnCollect;
+	[SerializeField] private AudioClip OnSkip;
+	[SerializeField] private AudioClip OnHit;
+	[SerializeField] private AudioClip OnUnlockPatternClip;
+    [SerializeField] private List<AudioClip> WallWhooshes;
 
 	[Header("ShareScore")]
-	public Camera photoCamera;
-	public GameObject canvas;
-	public Image ImageInGameEnd;
-	public Image ImageInRender;
-	public List<Sprite> ShareIcons;
-	public Text sharedScore;
+	[SerializeField] private Camera photoCamera;
+	[SerializeField] private GameObject canvas;
+	[SerializeField] private Image ImageInGameEnd;
+	[SerializeField] private Image ImageInRender;
+	[SerializeField] private List<Sprite> ShareIcons;
+    [SerializeField] private Text sharedScore;
 	private Texture2D renderedTexture;
 
 	//Analytics
 	private static int gamePlayed;
 	[Header("IAP")]
-	public Purchaser purchaser;
-	public GameObject purchaseNoAdsButton;
-	public GameObject noAdsPurchased;
+    [SerializeField] private Purchaser purchaser;
+    [SerializeField] private GameObject purchaseNoAdsButton;
+    [SerializeField] private GameObject noAdsPurchased;
 
 	void Awake()
 	{
